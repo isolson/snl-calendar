@@ -2,6 +2,7 @@
 """Generate snl.ics from TVMaze API data."""
 
 import json
+import re
 import urllib.request
 from datetime import date, timedelta, datetime, timezone
 from pathlib import Path
@@ -49,7 +50,7 @@ def format_summary(host, guest, season_num, is_premiere, is_finale):
     if host is None:
         label = "SNL: Host & Musical Guest TBA"
     elif guest is None:
-        label = f"SNL: {host} (host + musical guest)"
+        label = f"SNL: {host}"
     else:
         label = f"SNL: {host} / {guest}"
 
@@ -59,6 +60,20 @@ def format_summary(host, guest, season_num, is_premiere, is_finale):
         label = label.replace("SNL:", f"SNL Season {season_num} Finale:", 1)
 
     return label
+
+
+def strip_html(text):
+    """Strip HTML tags and decode common entities."""
+    text = re.sub(r"<[^>]+>", "", text)
+    text = text.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+    text = text.replace("&quot;", '"').replace("&#39;", "'")
+    return text.strip()
+
+
+def split_summary_paragraphs(html):
+    """Split an HTML summary into cleaned paragraphs."""
+    paragraphs = re.findall(r"<p>(.*?)</p>", html, re.DOTALL)
+    return [strip_html(p) for p in paragraphs if strip_html(p)]
 
 
 def escape_ical(text):
@@ -196,7 +211,11 @@ def generate_ics(episodes_data, overrides):
                 is_finale = ep["number"] == season_eps[-1]["number"]
                 summary = format_summary(host, guest, snum, is_premiere, is_finale)
                 uid = generate_uid(date_str, "snl")
-                events_by_date[date_str] = format_vevent(saturday, summary, uid, is_episode=True)
+                desc_parts = [f"S{snum}:E{ep['number']}"]
+                if ep.get("summary"):
+                    desc_parts.extend(split_summary_paragraphs(ep["summary"]))
+                description = "\n".join(desc_parts)
+                events_by_date[date_str] = format_vevent(saturday, summary, uid, description=description, is_episode=True)
             else:
                 uid = generate_uid(date_str, "nosnl")
                 events_by_date[date_str] = format_vevent(saturday, "No SNL Today", uid)
