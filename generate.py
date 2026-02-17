@@ -99,7 +99,7 @@ def generate_uid(date_str, suffix="snl"):
     return f"{date_str.replace('-', '')}-{suffix}@snl-calendar"
 
 
-def format_vevent(dt, summary, uid, description=""):
+def format_vevent(dt, summary, uid, description="", is_episode=False):
     """Format a single VEVENT block."""
     dtstart = dt.strftime("%Y%m%d")
     dtend = (dt + timedelta(days=1)).strftime("%Y%m%d")
@@ -116,6 +116,18 @@ def format_vevent(dt, summary, uid, description=""):
     ]
     if description:
         lines.append(fold_line(f"DESCRIPTION:{escape_ical(description)}"))
+    if is_episode:
+        # Alert at 11:25 PM (5 min before 11:30 PM ET air time)
+        lines.extend([
+            "BEGIN:VALARM",
+            "TRIGGER:PT23H25M",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:SNL starts in 5 minutes",
+            "END:VALARM",
+        ])
+    else:
+        # Suppress Apple Calendar's default day-before alert
+        lines.append("X-APPLE-DEFAULT-ALARM:FALSE")
     lines.append("END:VEVENT")
     return "\r\n".join(lines)
 
@@ -184,7 +196,7 @@ def generate_ics(episodes_data, overrides):
                 is_finale = ep["number"] == season_eps[-1]["number"]
                 summary = format_summary(host, guest, snum, is_premiere, is_finale)
                 uid = generate_uid(date_str, "snl")
-                events_by_date[date_str] = format_vevent(saturday, summary, uid)
+                events_by_date[date_str] = format_vevent(saturday, summary, uid, is_episode=True)
             else:
                 uid = generate_uid(date_str, "nosnl")
                 events_by_date[date_str] = format_vevent(saturday, "No SNL Today", uid)
