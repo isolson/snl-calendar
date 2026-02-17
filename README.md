@@ -1,8 +1,8 @@
 # SNL Calendar
 
-I can never remember if Saturday Night Live is on this week. Is it a repeat? Is it on hiatus? Who's hosting? I got tired of Googling it every Saturday, so I built this.
+Built after the hundredth discussion of "Is there a new SNL this week?" with my wife
 
-It's a subscribable calendar that puts one event on every Saturday during the SNL season: either the host and musical guest, or "No SNL Today." Updates automatically when new episodes are announced.
+An auto-updating calendar that puts one all-day event on every Saturday during the SNL season: either the host and musical guest, or "No SNL Today." Updates automatically when new episodes are announced.
 
 ## Subscribe
 
@@ -15,10 +15,10 @@ webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics
 ### Apple Calendar
 File → New Calendar Subscription → paste the URL above.
 
-### Google Calendar
+### Google Calendar (not yet tested)
 Settings → Add calendar → From URL → paste the URL above.
 
-### Outlook
+### Outlook (not yet tested)
 Add Calendar → From internet → paste the URL above.
 
 ## What it shows
@@ -37,10 +37,6 @@ Specials (like the 50th Anniversary) show up on their actual air date, with a no
 
 A GitHub Action runs daily, fetches the latest schedule from the [TVMaze API](https://api.tvmaze.com/shows/361/episodes), and regenerates `snl.ics` if anything changed. Your calendar app refreshes the subscription daily and picks up updates automatically — including when "TBA" episodes get their host announced.
 
-## Covers
-
-- Season 50 (September 2024 – May 2025)
-- Season 51 (October 2025 – May 2026)
 
 ## Manual overrides
 
