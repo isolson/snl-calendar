@@ -26,10 +26,12 @@ Add Calendar → From internet → paste the URL above.
 - **Episode week:** `SNL: Host / Musical Guest`
 - **Season premiere:** `SNL Season 51 Premiere: Host / Musical Guest`
 - **Season finale:** `SNL Season 51 Finale: Host / Musical Guest`
-- **Double duty:** `SNL: Sabrina Carpenter (host + musical guest)`
+- **Double duty:** `SNL: Sabrina Carpenter`
 - **Not yet announced:** `SNL: Host & Musical Guest TBA` — updates automatically once announced
 - **Off week:** `No SNL Today`
 - **Summer / off-season:** nothing (calendar is quiet)
+
+Each episode's Notes field shows the season:episode number (e.g., `S51:E4`) followed by blurbs about the host and musical guest from the TVMaze API.
 
 Specials (like the 50th Anniversary) show up on their actual air date, with a note on the preceding Saturday pointing to them.
 
