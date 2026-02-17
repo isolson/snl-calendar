@@ -218,7 +218,7 @@ def generate_ics(episodes_data, overrides):
                 events_by_date[date_str] = format_vevent(saturday, summary, uid, description=description, is_episode=True)
             else:
                 uid = generate_uid(date_str, "nosnl")
-                events_by_date[date_str] = format_vevent(saturday, "No SNL Today", uid)
+                events_by_date[date_str] = format_vevent(saturday, "No SNL Tonight", uid)
 
     # 2. Handle non-Saturday specials from API
     for ep, snum in special_episodes:
@@ -245,7 +245,7 @@ def generate_ics(episodes_data, overrides):
             prev_str = prev_saturday.isoformat()
             pointer_uid = generate_uid(prev_str, "pointer")
             pointer_summary = f"{special['title']} - {_day_name(sp_date)}"
-            # Pointer replaces any "No SNL Today" on that Saturday
+            # Pointer replaces any "No SNL Tonight" on that Saturday
             events_by_date[prev_str] = format_vevent(prev_saturday, pointer_summary, pointer_uid)
 
     # Assemble calendar
