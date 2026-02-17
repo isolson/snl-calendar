@@ -9,7 +9,7 @@ It's a subscribable calendar that puts one event on every Saturday during the SN
 Open this URL in your browser, or paste it into your calendar app:
 
 ```
-webcal://raw.githubusercontent.com/isolson/ical/master/snl.ics
+webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics
 ```
 
 ### Apple Calendar
