@@ -4,7 +4,7 @@ An auto-updating calendar that puts one all-day event on every Saturday during t
 
 ## Subscribe
 
-**[Click here to subscribe](webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics)** — works on iOS, macOS, and most calendar apps.
+**[Click here to subscribe](https://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics)** — works on iOS, macOS, and most calendar apps.
 
 Or copy this URL into your calendar app manually:
 
