@@ -1,12 +1,12 @@
 # SNL Calendar
 
-Built after the hundredth discussion of "Is there a new SNL this week?" with my wife
-
 An auto-updating calendar that puts one all-day event on every Saturday during the SNL season: either the host and musical guest, or "No SNL Tonight." Updates automatically when new episodes are announced.
 
 ## Subscribe
 
-Open this URL in your browser, or paste it into your calendar app:
+**[Click here to subscribe](webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics)** — works on iOS, macOS, and most calendar apps.
+
+Or copy this URL into your calendar app manually:
 
 ```
 webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics
