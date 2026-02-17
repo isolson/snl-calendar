@@ -2,10 +2,53 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="refresh" content="0;url=webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics">
   <title>Subscribe to SNL Calendar</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+    .card {
+      text-align: center;
+      padding: 3rem 2rem;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+    p {
+      color: #8b949e;
+      margin: 0 0 1.5rem;
+      line-height: 1.5;
+    }
+    a {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: #238636;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    a:hover { background: #2ea043; }
+  </style>
 </head>
 <body>
-  <p>Opening your calendar app&hellip; <a href="webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics">Click here</a> if nothing happened.</p>
+  <div class="card">
+    <h1>SNL Calendar</h1>
+    <p>Opening your calendar app&hellip;</p>
+    <a href="webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics">Click here if nothing happened</a>
+  </div>
 </body>
 </html>
