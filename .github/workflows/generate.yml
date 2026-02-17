@@ -1,0 +1,33 @@
+name: Generate SNL Calendar
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  push:
+    paths:
+      - 'generate.py'
+      - 'data/overrides.json'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate .ics file
+        run: python generate.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet snl.ics 2>/dev/null || (
+            git add snl.ics
+            git commit -m "Regenerate snl.ics"
+            git push
+          )
