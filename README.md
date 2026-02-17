@@ -2,7 +2,7 @@
 
 Built after the hundredth discussion of "Is there a new SNL this week?" with my wife
 
-An auto-updating calendar that puts one all-day event on every Saturday during the SNL season: either the host and musical guest, or "No SNL Today." Updates automatically when new episodes are announced.
+An auto-updating calendar that puts one all-day event on every Saturday during the SNL season: either the host and musical guest, or "No SNL Tonight." Updates automatically when new episodes are announced.
 
 ## Subscribe
 
@@ -28,7 +28,7 @@ Add Calendar → From internet → paste the URL above.
 - **Season finale:** `SNL Season 51 Finale: Host / Musical Guest`
 - **Double duty:** `SNL: Sabrina Carpenter`
 - **Not yet announced:** `SNL: Host & Musical Guest TBA` — updates automatically once announced
-- **Off week:** `No SNL Today`
+- **Off week:** `No SNL Tonight`
 - **Summer / off-season:** nothing (calendar is quiet)
 
 Each episode's Notes field shows the season:episode number (e.g., `S51:E4`) followed by blurbs about the host and musical guest from the TVMaze API.
