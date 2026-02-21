@@ -13,7 +13,7 @@ webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics
 ```
 
 ### Apple Calendar
-File → New Calendar Subscription → paste the URL above. Set **Auto-refresh** to **Every day** (Apple defaults to weekly).
+File → New Calendar Subscription → paste the URL above. Set **Auto-refresh** to **Every day** (Apple defaults to weekly). Uncheck **Remove: Alerts** to get a notification 5 minutes before airtime on episode nights.
 
 ### Google Calendar (not yet tested)
 Settings → Add calendar → From URL → paste the URL above.
