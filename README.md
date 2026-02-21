@@ -4,22 +4,31 @@ An auto-updating calendar that puts one all-day event on every Saturday during t
 
 ## Subscribe
 
-**[Click here to subscribe](https://isolson.github.io/snl-calendar/subscribe)** — works on iOS, macOS, and most calendar apps.
+There are two calendars you can subscribe to independently:
 
-Or copy this URL into your calendar app manually:
+| Calendar | What it does |
+|---|---|
+| **Schedule** | All-day events showing every Saturday's lineup (or "No SNL Tonight") |
+| **Alerts** | Timed 11:30 PM ET events on episode nights with a 5-minute-before notification |
 
-```
-webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics
-```
+**[Subscribe to the schedule](https://isolson.github.io/snl-calendar/subscribe)** — works on iOS, macOS, and most calendar apps.
+
+Or copy these URLs into your calendar app manually:
+
+- **Schedule:** `webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl.ics`
+- **Alerts:** `webcal://raw.githubusercontent.com/isolson/snl-calendar/master/snl-alerts.ics`
 
 ### Apple Calendar
-File → New Calendar Subscription → paste the URL above. Set **Auto-refresh** to **Every day** (Apple defaults to weekly).
+File → New Calendar Subscription → paste the URL. Set **Auto-refresh** to **Every day** (Apple defaults to weekly).
+
+- **Schedule calendar:** Check **Remove: Alerts** to avoid Apple's default day-before notifications.
+- **Alerts calendar:** Uncheck **Remove: Alerts** so the 5-minute-before notification comes through.
 
 ### Google Calendar (not yet tested)
-Settings → Add calendar → From URL → paste the URL above.
+Settings → Add calendar → From URL → paste the URL.
 
 ### Outlook (not yet tested)
-Add Calendar → From internet → paste the URL above.
+Add Calendar → From internet → paste the URL.
 
 ## What it shows
 

@@ -3,15 +3,32 @@ VERSION:2.0
 PRODID:-//isolson//SNL Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:SNL Schedule
-X-WR-CALDESC:Saturday Night Live episode schedule
+X-WR-CALNAME:SNL Alerts
+X-WR-CALDESC:Saturday Night Live airtime alerts (11:30 PM ET)
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+END:DAYLIGHT
+END:VTIMEZONE
 BEGIN:VEVENT
-UID:20240928-snl@snl-calendar
+UID:20240928-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20240928
-DTEND;VALUE=DATE:20240929
+DTSTART;TZID=America/New_York:20240928T233000
+DTEND;TZID=America/New_York:20240929T010000
 SUMMARY:SNL Season 50 Premiere: Jean Smart / Jelly Roll
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E1\n"Saturday Night Live" launches its milestone 50th seas
@@ -20,24 +37,34 @@ DESCRIPTION:S50:E1\n"Saturday Night Live" launches its milestone 50th seas
  Comedy Series for her work on "Hacks\," streaming on Max. Jelly Roll make
  s his musical guest debut. Currently on tour\, the Grammy Award-nominated 
  artist's new album\, "Beautifully Broken\," will be released Oct. 11.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241005-snl@snl-calendar
+UID:20241005-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241005
-DTEND;VALUE=DATE:20241006
+DTSTART;TZID=America/New_York:20241005T233000
+DTEND;TZID=America/New_York:20241006T010000
 SUMMARY:SNL: Nate Bargatze / Coldplay
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E2\nNate Bargatze makes his second appearance as "SNL" host
   on Oct. 5. Bargatze's "The Be Funny Tour" continues this fall with dates 
  nationwide.  Coldplay performs as musical guest for the eighth time. The
   band's 10th studio album\, "Moon Music\," will be released Oct. 4
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241012-snl@snl-calendar
+UID:20241012-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241012
-DTEND;VALUE=DATE:20241013
+DTSTART;TZID=America/New_York:20241012T233000
+DTEND;TZID=America/New_York:20241013T010000
 SUMMARY:SNL: Ariana Grande / Stevie Nicks
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E3\nAriana Grande hosts "SNL" for the second time on Oct. 1
@@ -46,12 +73,17 @@ DESCRIPTION:S50:E3\nAriana Grande hosts "SNL" for the second time on Oct. 1
  Nicks marks her second appearance as musical guest\, following her first a
  ppearance in 1983. Nicks is a Grammy-winning singer-songwriter and two-tim
  e Rock & Roll Hall of Fame inductee.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241019-snl@snl-calendar
+UID:20241019-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241019
-DTEND;VALUE=DATE:20241020
+DTSTART;TZID=America/New_York:20241019T233000
+DTEND;TZID=America/New_York:20241020T010000
 SUMMARY:SNL: Michael Keaton / Billie Eilish
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E4\nMichael Keaton returns to host "SNL" for the fourth tim
@@ -60,20 +92,17 @@ DESCRIPTION:S50:E4\nMichael Keaton returns to host "SNL" for the fourth tim
  e Eilish takes the stage as musical guest for the fourth time. The Grammy-
  winning artist will launch a worldwide tour this fall\, supporting her new
  est album\, "HIT ME HARD AND SOFT."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241026-nosnl@snl-calendar
+UID:20241102-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241026
-DTEND;VALUE=DATE:20241027
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20241102-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241102
-DTEND;VALUE=DATE:20241103
+DTSTART;TZID=America/New_York:20241102T233000
+DTEND;TZID=America/New_York:20241103T010000
 SUMMARY:SNL: John Mulaney / Chappell Roan
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E5\nJohn Mulaney hosts for the sixth time on Nov. 2. The Em
@@ -82,20 +111,17 @@ DESCRIPTION:S50:E5\nJohn Mulaney hosts for the sixth time on Nov. 2. The Em
  "The Rise and Fall of a Midwest Princess\," has spent nine weeks in the To
  p 5 on the Billboard 200\, and her latest single\, "Good Luck\, Babe!\," h
  as amassed nearly 1 billion streams.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241104-special@snl-calendar
+UID:20241109-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241104
-DTEND;VALUE=DATE:20241105
-SUMMARY:The 2024 SNL Election Special
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20241109-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241109
-DTEND;VALUE=DATE:20241110
+DTSTART;TZID=America/New_York:20241109T233000
+DTEND;TZID=America/New_York:20241110T010000
 SUMMARY:SNL: Bill Burr / Mk.gee
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E6\nBill Burr returns to host "Saturday Night Live" for the
@@ -103,58 +129,49 @@ DESCRIPTION:S50:E6\nBill Burr returns to host "Saturday Night Live" for the
  tour with his "Bill Burr Live" show.\nMk.gee performs as a musical guest f
  or the first time. He is currently on a world tour with his critically acc
  laimed debut album\, "Two Star & The Dream Police."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241116-snl@snl-calendar
+UID:20241116-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241116
-DTEND;VALUE=DATE:20241117
+DTSTART;TZID=America/New_York:20241116T233000
+DTEND;TZID=America/New_York:20241117T010000
 SUMMARY:SNL: Charli XCX
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E7\nCharli xcx does double duty on Nov. 16 in her first app
  earance as "SNL" host and third appearance as musical guest. The Grammy-no
  minated musician released her remix album\, "Brat and It's Completely Diff
  erent but Also Still Brat\," earlier this month.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241123-nosnl@snl-calendar
+UID:20241207-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241123
-DTEND;VALUE=DATE:20241124
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20241127-special@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241127
-DTEND;VALUE=DATE:20241128
-SUMMARY:A Saturday Night Live Thanksgiving
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20241130-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241130
-DTEND;VALUE=DATE:20241201
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20241207-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241207
-DTEND;VALUE=DATE:20241208
+DTSTART;TZID=America/New_York:20241207T233000
+DTEND;TZID=America/New_York:20241208T010000
 SUMMARY:SNL: Paul Mescal / Shaboozey
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E8\n"Gladiator II" star Paul Mescal hosts the Dec. 7 episod
  e featuring musical guest Shaboozey. Both appear for the first time.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241214-snl@snl-calendar
+UID:20241214-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241214
-DTEND;VALUE=DATE:20241215
+DTSTART;TZID=America/New_York:20241214T233000
+DTEND;TZID=America/New_York:20241215T010000
 SUMMARY:SNL: Chris Rock / Gracie Abrams
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E9\nChris Rock returns on Dec. 14 for his fourth time as SN
@@ -162,20 +179,17 @@ DESCRIPTION:S50:E9\nChris Rock returns on Dec. 14 for his fourth time as SN
  ously hosted in November 1996\, November 2014\, and October 2020. Rock is 
  joined by The Secret of Us singer Gracie Abrams\, making her SNL debut as 
  Musical Guest.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241218-special@snl-calendar
+UID:20241221-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241218
-DTEND;VALUE=DATE:20241219
-SUMMARY:A Saturday Night Live Christmas
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20241221-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241221
-DTEND;VALUE=DATE:20241222
+DTSTART;TZID=America/New_York:20241221T233000
+DTEND;TZID=America/New_York:20241222T010000
 SUMMARY:SNL: Martin Short / Hozier
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E10\nMartin Short returns for his third time as individual 
@@ -188,36 +202,17 @@ DESCRIPTION:S50:E10\nMartin Short returns for his third time as individual
   SNL. The "Too Sweet" singer celebrates the December 6 release of Unreal
   Unearth: Unending\, the deluxe version of his hit 2023 album\, Unreal Un
  earth.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20241228-nosnl@snl-calendar
+UID:20250118-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20241228
-DTEND;VALUE=DATE:20241229
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250104-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250104
-DTEND;VALUE=DATE:20250105
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250111-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250111
-DTEND;VALUE=DATE:20250112
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250118-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250118
-DTEND;VALUE=DATE:20250119
+DTSTART;TZID=America/New_York:20250118T233000
+DTEND;TZID=America/New_York:20250119T010000
 SUMMARY:SNL: Dave Chappelle / GloRilla
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E11\n"Saturday Night Live" will return Jan. 18 with Dave Ch
@@ -226,88 +221,34 @@ DESCRIPTION:S50:E11\n"Saturday Night Live" will return Jan. 18 with Dave Ch
  rd for Best Comedy Album.GloRilla will make her musical guest debut. The m
  ulti-platinum selling artist received two Grammy nominations this year for
   her hit single "Yeah Glo!"
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250125-snl@snl-calendar
+UID:20250125-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250125
-DTEND;VALUE=DATE:20250126
+DTSTART;TZID=America/New_York:20250125T233000
+DTEND;TZID=America/New_York:20250126T010000
 SUMMARY:SNL: Timothée Chalamet
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E12\nTimothée Chalamet will return for his third time host
  ing "SNL" and first time as musical guest. Chalamet has received SAG\, Gol
  den Globe and Critics Choice Award nominations for his performance as Bob 
  Dylan in "A Complete Unknown\," now in theaters.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250127-special@snl-calendar
+UID:20250301-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250127
-DTEND;VALUE=DATE:20250128
-SUMMARY:Ladies and Gentlemen... 50 Years of SNL Music
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250201-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250201
-DTEND;VALUE=DATE:20250202
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250208-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250208
-DTEND;VALUE=DATE:20250209
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250213-special@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250213
-DTEND;VALUE=DATE:20250214
-SUMMARY:SNL 50 Rewind: The Early Years of Saturday Night Live
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250214-special@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250214
-DTEND;VALUE=DATE:20250215
-SUMMARY:SNL50: The Homecoming Concert
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250215-pointer@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250215
-DTEND;VALUE=DATE:20250216
-SUMMARY:SNL 50th Anniversary Special - Sunday
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250216-special-override@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250216
-DTEND;VALUE=DATE:20250217
-SUMMARY:SNL 50th Anniversary Special
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250222-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250222
-DTEND;VALUE=DATE:20250223
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250301-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250301
-DTEND;VALUE=DATE:20250302
+DTSTART;TZID=America/New_York:20250301T233000
+DTEND;TZID=America/New_York:20250302T010000
 SUMMARY:SNL: Shane Gillis / Tate McRae
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E13\nShane Gillis will host "Saturday Night Live" for the s
@@ -315,40 +256,34 @@ DESCRIPTION:S50:E13\nShane Gillis will host "Saturday Night Live" for the s
  res\," which returns this year for its second season on Netflix.\nTate McR
  ae will take the stage as musical guest for the second time. Her highly an
  ticipated third album\, "So Close To What\," is set for release Feb. 21.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250308-snl@snl-calendar
+UID:20250308-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250308
-DTEND;VALUE=DATE:20250309
+DTSTART;TZID=America/New_York:20250308T233000
+DTEND;TZID=America/New_York:20250309T010000
 SUMMARY:SNL: Lady Gaga
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E14\nOn March 8\, Lady Gaga will do double duty for the sec
  ond time\, marking her second appearance as host and fifth appearance as m
  usical guest. The Grammy and Academy Award winner's newest album\, "MAYHEM
  \," is due out March 7.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250315-nosnl@snl-calendar
+UID:20250329-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250315
-DTEND;VALUE=DATE:20250316
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250322-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250322
-DTEND;VALUE=DATE:20250323
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250329-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250329
-DTEND;VALUE=DATE:20250330
+DTSTART;TZID=America/New_York:20250329T233000
+DTEND;TZID=America/New_York:20250330T010000
 SUMMARY:SNL: Mikey Madison / Morgan Wallen
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E15\nMikey Madison will make her "Saturday Night Live" host
@@ -357,12 +292,17 @@ DESCRIPTION:S50:E15\nMikey Madison will make her "Saturday Night Live" host
  and.\nMorgan Wallen will make his second appearance as musical guest. The 
  19-time Billboard Music Awards winner kicks off a tour this summer in supp
  ort of his upcoming album\, "I'm The Problem."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250405-snl@snl-calendar
+UID:20250405-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250405
-DTEND;VALUE=DATE:20250406
+DTSTART;TZID=America/New_York:20250405T233000
+DTEND;TZID=America/New_York:20250406T010000
 SUMMARY:SNL: Jack Black / Elton John & Brandi Carlile
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E16\nJack Black will host "SNL" for the fourth time on Apri
@@ -371,12 +311,17 @@ DESCRIPTION:S50:E16\nJack Black will host "SNL" for the fourth time on Apri
  t for the first time. Their collaborative studio album\, "Who Believes In 
  Angels?" including the Oscar-nominated song "Never Too Late\," will be rel
  eased April 4.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250412-snl@snl-calendar
+UID:20250412-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250412
-DTEND;VALUE=DATE:20250413
+DTSTART;TZID=America/New_York:20250412T233000
+DTEND;TZID=America/New_York:20250413T010000
 SUMMARY:SNL: Jon Hamm / Lizzo
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E17\nJon Hamm will host "SNL" for the fourth time on April 
@@ -385,28 +330,17 @@ DESCRIPTION:S50:E17\nJon Hamm will host "SNL" for the fourth time on April
  s musical guest for the fourth time. The Emmy and four-time Grammy Award w
  inner just debuted "Still Bad\," the newest single from her highly anticip
  ated next album\, "Love in Real Life."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250419-nosnl@snl-calendar
+UID:20250503-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250419
-DTEND;VALUE=DATE:20250420
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250426-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250426
-DTEND;VALUE=DATE:20250427
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20250503-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250503
-DTEND;VALUE=DATE:20250504
+DTSTART;TZID=America/New_York:20250503T233000
+DTEND;TZID=America/New_York:20250504T010000
 SUMMARY:SNL: Quinta Brunson / Benson Boone
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E18\nQuinta Brunson will host "Saturday Night Live" for the
@@ -414,12 +348,17 @@ DESCRIPTION:S50:E18\nQuinta Brunson will host "Saturday Night Live" for the
  and creator of ABC's "Abbott Elementary."\nBenson Boone will perform as mu
  sical guest for the first time. The Grammy-nominated\, multi-platinum sell
  ing artist will release his next album "American Heart" on June 20.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250510-snl@snl-calendar
+UID:20250510-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250510
-DTEND;VALUE=DATE:20250511
+DTSTART;TZID=America/New_York:20250510T233000
+DTEND;TZID=America/New_York:20250511T010000
 SUMMARY:SNL: Walton Goggins / Arcade Fire
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E19\nWalton Goggins will host "SNL" for the first time on M
@@ -427,12 +366,17 @@ DESCRIPTION:S50:E19\nWalton Goggins will host "SNL" for the first time on M
  l season of "The Righteous Gemstones\," both streaming on Max.\nArcade Fir
  e will take the stage as musical guest for the sixth time. The Grammy Awar
  d-winning band will release their new album\, "Pink Elephant\," on May 9.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20250517-snl@snl-calendar
+UID:20250517-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20250517
-DTEND;VALUE=DATE:20250518
+DTSTART;TZID=America/New_York:20250517T233000
+DTEND;TZID=America/New_York:20250518T010000
 SUMMARY:SNL Season 50 Finale: Scarlett Johansson / Bad Bunny
 TRANSP:TRANSPARENT
 DESCRIPTION:S50:E20\nScarlett Johansson will host the May 17 season finale\
@@ -442,12 +386,17 @@ DESCRIPTION:S50:E20\nScarlett Johansson will host the May 17 season finale\
  . The 3-time Grammy-winning artist's latest album\, "DeBÍ TiRAR MáS FOTo
  S\," spent three consecutive weeks at #1 on the Billboard 200 and has been
   #1 on the Top Latin Albums chart for 15 straight weeks.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251004-snl@snl-calendar
+UID:20251004-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251004
-DTEND;VALUE=DATE:20251005
+DTSTART;TZID=America/New_York:20251004T233000
+DTEND;TZID=America/New_York:20251005T010000
 SUMMARY:SNL Season 51 Premiere: Bad Bunny / Doja Cat
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E1\nThe 51st season of "Saturday Night Live" will premiere 
@@ -456,12 +405,17 @@ DESCRIPTION:S51:E1\nThe 51st season of "Saturday Night Live" will premiere
  l\, celebrating his critically acclaimed album\, "DeBÍ TiRAR MáS FOToS."
  \nDoja Cat will make her "SNL" musical guest debut. The Grammy winner's fi
  fth album\, "Vie\," will be released Sept. 26.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251011-snl@snl-calendar
+UID:20251011-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251011
-DTEND;VALUE=DATE:20251012
+DTSTART;TZID=America/New_York:20251011T233000
+DTEND;TZID=America/New_York:20251012T010000
 SUMMARY:SNL: Amy Poehler / Role Model
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E2\nOn Oct. 11\, Amy Poehler will return to Studio 8H for h
@@ -470,32 +424,34 @@ DESCRIPTION:S51:E2\nOn Oct. 11\, Amy Poehler will return to Studio 8H for h
  y Poehler."\nRole Model will perform as musical guest for the first time. 
  He just marked his first Billboard No. 1 song with "Sally\, When the Wine 
  Runs Out" topping the Adult Alternative Airplay chart.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251018-snl@snl-calendar
+UID:20251018-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251018
-DTEND;VALUE=DATE:20251019
+DTSTART;TZID=America/New_York:20251018T233000
+DTEND;TZID=America/New_York:20251019T010000
 SUMMARY:SNL: Sabrina Carpenter
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E3\nSabrina Carpenter will do double duty on Oct. 18\, mark
  ing her first appearance as "SNL" host and second appearance as musical gu
  est. The Grammy winner's newest album\, "Man's Best Friend\," debuted at #
  1 on the Billboard 200 chart.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251025-nosnl@snl-calendar
+UID:20251101-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251025
-DTEND;VALUE=DATE:20251026
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20251101-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251101
-DTEND;VALUE=DATE:20251102
+DTSTART;TZID=America/New_York:20251101T233000
+DTEND;TZID=America/New_York:20251102T010000
 SUMMARY:SNL: Miles Teller / Brandi Carlile
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E4\nMiles Teller will host "Saturday Night Live" for the se
@@ -504,12 +460,17 @@ DESCRIPTION:S51:E4\nMiles Teller will host "Saturday Night Live" for the se
  for her third individual appearance and fourth overall. The 11-time Grammy
   Award winner's new album\, "Returning to Myself\," will be released Oct. 
  24.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251108-snl@snl-calendar
+UID:20251108-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251108
-DTEND;VALUE=DATE:20251109
+DTSTART;TZID=America/New_York:20251108T233000
+DTEND;TZID=America/New_York:20251109T010000
 SUMMARY:SNL: Nikki Glaser / sombr
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E5\nNikki Glaser will make her "SNL" hosting debut on Nov. 
@@ -519,12 +480,17 @@ DESCRIPTION:S51:E5\nNikki Glaser will make her "SNL" hosting debut on Nov.
  kout hit\, "back to friends\," off his debut album "I Barely Know Her" has
   crossed 1 billion streams\, and he currently sits at #1 on the Billboard 
  Hot 100 Songwriters chart.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251115-snl@snl-calendar
+UID:20251115-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251115
-DTEND;VALUE=DATE:20251116
+DTSTART;TZID=America/New_York:20251115T233000
+DTEND;TZID=America/New_York:20251116T010000
 SUMMARY:SNL: Glen Powell / Olivia Dean
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E6\nGlen Powell will host "SNL" for the first time on Nov. 
@@ -533,28 +499,17 @@ DESCRIPTION:S51:E6\nGlen Powell will host "SNL" for the first time on Nov.
  Olivia Dean will make her musical guest debut. Dean is currently on tour i
  n support of her latest album\, "The Art of Loving\," which has reached #1
   in five countries.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251122-nosnl@snl-calendar
+UID:20251206-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251122
-DTEND;VALUE=DATE:20251123
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20251129-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251129
-DTEND;VALUE=DATE:20251130
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20251206-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251206
-DTEND;VALUE=DATE:20251207
+DTSTART;TZID=America/New_York:20251206T233000
+DTEND;TZID=America/New_York:20251207T010000
 SUMMARY:SNL: Melissa McCarthy / Dijon
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E7\nMelissa McCarthy will return to host "Saturday Night Li
@@ -562,12 +517,17 @@ DESCRIPTION:S51:E7\nMelissa McCarthy will return to host "Saturday Night Li
  n Emmy Award for hosting "SNL" in 2017.\nDijon will perform as musical gue
  st for the first time. He's currently nominated for two Grammy Awards and 
  is on tour in support of his album\, "Baby."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251213-snl@snl-calendar
+UID:20251213-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251213
-DTEND;VALUE=DATE:20251214
+DTSTART;TZID=America/New_York:20251213T233000
+DTEND;TZID=America/New_York:20251214T010000
 SUMMARY:SNL: Josh O'Connor / Lily Allen
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E8\nJosh O'Connor will make his "SNL" hosting debut on Dec.
@@ -575,12 +535,17 @@ DESCRIPTION:S51:E8\nJosh O'Connor will make his "SNL" hosting debut on Dec.
  n select theaters Nov. 26 and streaming Dec. 12 on Netflix.\nLily Allen wi
  ll make her second appearance as musical guest. The Grammy-nominated artis
  t just released her fifth album\, "West End Girl."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251220-snl@snl-calendar
+UID:20251220-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251220
-DTEND;VALUE=DATE:20251221
+DTSTART;TZID=America/New_York:20251220T233000
+DTEND;TZID=America/New_York:20251221T010000
 SUMMARY:SNL: Ariana Grande / Cher
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E9\nAriana Grande will host "SNL" for the third time on Dec
@@ -589,36 +554,17 @@ DESCRIPTION:S51:E9\nAriana Grande will host "SNL" for the third time on Dec
   musical guest for the second time following her first appearance in 1987.
   The Oscar\, Emmy and Grammy Award winner's autobiography\, "Cher: The Mem
  oir" is currently available in paperback.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20251227-nosnl@snl-calendar
+UID:20260117-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20251227
-DTEND;VALUE=DATE:20251228
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260103-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260103
-DTEND;VALUE=DATE:20260104
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260110-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260110
-DTEND;VALUE=DATE:20260111
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260117-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260117
-DTEND;VALUE=DATE:20260118
+DTSTART;TZID=America/New_York:20260117T233000
+DTEND;TZID=America/New_York:20260118T010000
 SUMMARY:SNL: Finn Wolfhard / A$AP Rocky
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E10\nFinn Wolfhard will host "Saturday Night Live" for the 
@@ -627,12 +573,17 @@ DESCRIPTION:S51:E10\nFinn Wolfhard will host "Saturday Night Live" for the
   take the stage as the musical guest for the first time. The multi-platinu
  m selling artist's fourth album\, "Don't Be Dumb\," will be released Jan. 
  16.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260124-snl@snl-calendar
+UID:20260124-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260124
-DTEND;VALUE=DATE:20260125
+DTSTART;TZID=America/New_York:20260124T233000
+DTEND;TZID=America/New_York:20260125T010000
 SUMMARY:SNL: Teyana Taylor / Geese
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E11\nTeyana Taylor will make her first hosting appearance o
@@ -641,12 +592,17 @@ DESCRIPTION:S51:E11\nTeyana Taylor will make her first hosting appearance o
  her album "Escape Room."\nGeese will perform as musical guest for the firs
  t time. The band is currently on a world tour in support of its critically
   acclaimed album\, "Getting Killed."
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260131-snl@snl-calendar
+UID:20260131-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260131
-DTEND;VALUE=DATE:20260201
+DTSTART;TZID=America/New_York:20260131T233000
+DTEND;TZID=America/New_York:20260201T010000
 SUMMARY:SNL: Alexander Skarsgård / Cardi B
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E12\nAlexander Skarsgård will make his "SNL" hosting debut
@@ -655,36 +611,17 @@ DESCRIPTION:S51:E12\nAlexander Skarsgård will make his "SNL" hosting debut
  \nCardi B will return for her second appearance as musical guest. The Gram
  my-winning artist kicks off the "Little Miss Drama Tour" on Feb. 11 follow
  ing the release of her newest Billboard #1 album\, "Am I the Drama?"
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260207-nosnl@snl-calendar
+UID:20260228-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260207
-DTEND;VALUE=DATE:20260208
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260214-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260214
-DTEND;VALUE=DATE:20260215
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260221-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260221
-DTEND;VALUE=DATE:20260222
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260228-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260228
-DTEND;VALUE=DATE:20260301
+DTSTART;TZID=America/New_York:20260228T233000
+DTEND;TZID=America/New_York:20260301T010000
 SUMMARY:SNL: Connor Storrie / Mumford & Sons
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E13\n"Saturday Night Live" will return Feb. 28 with Connor 
@@ -693,12 +630,17 @@ DESCRIPTION:S51:E13\n"Saturday Night Live" will return Feb. 28 with Connor
  nMumford & Sons will make their fourth appearance as musical guest. The Gr
  ammy Award-winning band's new album\, "Prizefighter\," is set for release 
  Feb. 20.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260307-snl@snl-calendar
+UID:20260307-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260307
-DTEND;VALUE=DATE:20260308
+DTSTART;TZID=America/New_York:20260307T233000
+DTEND;TZID=America/New_York:20260308T010000
 SUMMARY:SNL: Ryan Gosling / Gorillaz
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E14\nRyan Gosling will host "SNL" for the fourth time on Ma
@@ -706,91 +648,94 @@ DESCRIPTION:S51:E14\nRyan Gosling will host "SNL" for the fourth time on Ma
  m "Project Hail Mary\," in theaters March 20.\nGorillaz will perform as mu
  sical guest for the first time. "The Mountain\," the new album from the Gr
  ammy-winning band\, will be released Feb 27.
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260314-snl@snl-calendar
+UID:20260314-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260314
-DTEND;VALUE=DATE:20260315
+DTSTART;TZID=America/New_York:20260314T233000
+DTEND;TZID=America/New_York:20260315T010000
 SUMMARY:SNL: Host & Musical Guest TBA
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E15
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260321-nosnl@snl-calendar
+UID:20260404-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260321
-DTEND;VALUE=DATE:20260322
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260328-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260328
-DTEND;VALUE=DATE:20260329
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260404-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260404
-DTEND;VALUE=DATE:20260405
+DTSTART;TZID=America/New_York:20260404T233000
+DTEND;TZID=America/New_York:20260405T010000
 SUMMARY:SNL: Host & Musical Guest TBA
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E16
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260411-snl@snl-calendar
+UID:20260411-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260411
-DTEND;VALUE=DATE:20260412
+DTSTART;TZID=America/New_York:20260411T233000
+DTEND;TZID=America/New_York:20260412T010000
 SUMMARY:SNL: Host & Musical Guest TBA
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E17
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260418-nosnl@snl-calendar
+UID:20260502-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260418
-DTEND;VALUE=DATE:20260419
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260425-nosnl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260425
-DTEND;VALUE=DATE:20260426
-SUMMARY:No SNL Tonight
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:20260502-snl@snl-calendar
-DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260502
-DTEND;VALUE=DATE:20260503
+DTSTART;TZID=America/New_York:20260502T233000
+DTEND;TZID=America/New_York:20260503T010000
 SUMMARY:SNL: Host & Musical Guest TBA
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E18
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260509-snl@snl-calendar
+UID:20260509-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260509
-DTEND;VALUE=DATE:20260510
+DTSTART;TZID=America/New_York:20260509T233000
+DTEND;TZID=America/New_York:20260510T010000
 SUMMARY:SNL: Host & Musical Guest TBA
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E19
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:20260516-snl@snl-calendar
+UID:20260516-snl-alert@snl-calendar
 DTSTAMP:20260221T055728Z
-DTSTART;VALUE=DATE:20260516
-DTEND;VALUE=DATE:20260517
+DTSTART;TZID=America/New_York:20260516T233000
+DTEND;TZID=America/New_York:20260517T010000
 SUMMARY:SNL: Host & Musical Guest TBA
 TRANSP:TRANSPARENT
 DESCRIPTION:S51:E20
+BEGIN:VALARM
+TRIGGER:-PT5M
+ACTION:DISPLAY
+DESCRIPTION:SNL starts in 5 minutes
+END:VALARM
 END:VEVENT
 END:VCALENDAR

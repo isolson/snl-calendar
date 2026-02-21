@@ -26,8 +26,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet snl.ics 2>/dev/null || (
-            git add snl.ics
+          git diff --quiet snl.ics snl-alerts.ics 2>/dev/null || (
+            git add snl.ics snl-alerts.ics
             git commit -m "Regenerate snl.ics"
             git push
           )
