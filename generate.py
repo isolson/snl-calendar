@@ -131,6 +131,8 @@ def format_vevent(dt, summary, uid, description="", is_episode=False):
     ]
     if description:
         lines.append(fold_line(f"DESCRIPTION:{escape_ical(description)}"))
+    # Suppress Apple Calendar's default day-before alert
+    lines.append("X-APPLE-DEFAULT-ALARM:FALSE")
     if is_episode:
         # Alert at 11:25 PM (5 min before 11:30 PM ET air time)
         lines.extend([
@@ -141,8 +143,15 @@ def format_vevent(dt, summary, uid, description="", is_episode=False):
             "END:VALARM",
         ])
     else:
-        # Suppress Apple Calendar's default day-before alert
-        lines.append("X-APPLE-DEFAULT-ALARM:FALSE")
+        # Dummy alarm that never fires — prevents Apple Calendar
+        # from adding its default "day before at 9am" alert
+        lines.extend([
+            "BEGIN:VALARM",
+            "TRIGGER:P7D",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:placeholder",
+            "END:VALARM",
+        ])
     lines.append("END:VEVENT")
     return "\r\n".join(lines)
 
